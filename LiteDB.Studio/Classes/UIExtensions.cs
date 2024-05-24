@@ -59,6 +59,8 @@ namespace LiteDB.Studio
 
                     cell.Style.BackColor = Color.White;
                     cell.Value = value.IsDocument ? value[key] : value;
+                    // Tag stores current value
+                    cell.Tag = new BsonValue(cell.Value);
 
                     row.ReadOnly = key == "_id";
                 }

@@ -530,6 +530,8 @@ namespace LiteDB.Studio
             }
 
             cell.Value = value;
+            // Update tag for current value
+            cell.Tag = new BsonValue(cell.Value);
         }
 
         private void GrdResult_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
